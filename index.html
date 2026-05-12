@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>East High – Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- LEFT PANEL -->
+  <div class="left-panel">
+    <img src="https://i.etsystatic.com/13178895/r/il/4defd8/5917687760/il_570xN.5917687760_e5sh.jpg" alt="East High" class="panel-img" />
+    <div class="panel-watermark">
+      <div class="watermark-tiger">🐯</div>
+      <div class="watermark-text">
+        <strong>EAST HIGH</strong>
+        <div class="watermark-since">Est. 1913</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="right-panel">
+    <div class="login-box">
+
+      <!-- Logo -->
+      <div class="logo-area">
+        <div class="logo-tiger">🐯</div>
+        <div class="logo-text">
+          <span class="logo-main">East High</span>
+          <span class="logo-since">Since 1913</span>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <form id="loginForm" novalidate>
+        <div class="input-group">
+          <input type="text" id="username" class="form-input" placeholder="First and Last Name" autocomplete="name" />
+          <span class="input-error" id="usernameError"></span>
+        </div>
+
+        <div class="input-group">
+          <div class="password-wrap">
+            <input type="password" id="password" class="form-input" placeholder="Password" autocomplete="current-password" />
+            <button type="button" class="toggle-pw" id="togglePw" aria-label="Show/hide password">
+              <svg id="eyeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+          <span class="input-error" id="passwordError"></span>
+        </div>
+
+        <div class="form-error" id="formError"></div>
+
+        <button type="submit" class="btn-login" id="loginBtn">
+          <span class="btn-text">Log in</span>
+          <span class="btn-loader" id="btnLoader"></span>
+        </button>
+
+        <p class="terms-text">
+          By logging in, you agree with
+          <a href="#" class="terms-link">Terms and Conditions</a>
+        </p>
+      </form>
+
+    </div>
+
+    <footer class="scripture">
+      <em>Once a Wildcat, Always a Wildcat!</em>
+    </footer>
+  </div>
+
+  <script src="proj.js"></script>
+</body>
+</html>

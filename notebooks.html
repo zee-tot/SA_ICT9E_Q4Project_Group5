@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>East High – Virtual Notebook</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <img src="logo.png" alt="East High Logo" class="logo-img"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+      <div class="logo-fallback">
+        <span class="logo-tiger">🐯</span>
+        <div class="logo-text">
+          <span class="logo-main">East High</span>
+          <span class="logo-since">Since 1913</span>
+        </div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="nav-item" id="nav-dashboard">
+        <span class="nav-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </span>
+        <span class="nav-label">Dashboard</span>
+      </a>
+
+      <a href="notebooks.html" class="nav-item active" id="nav-notebook">
+        <span class="nav-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </span>
+        <span class="nav-label">Virtual Notebook</span>
+      </a>
+
+      <a href="tasks.html" class="nav-item" id="nav-tasks">
+        <span class="nav-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="9" y1="13" x2="15" y2="13"/>
+            <line x1="9" y1="17" x2="15" y2="17"/>
+            <polyline points="9 9 10 9"/>
+          </svg>
+        </span>
+        <span class="nav-label">Tasks</span>
+      </a>
+
+      <a href="profile.html" class="nav-item" id="nav-profile">
+        <span class="nav-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </span>
+        <span class="nav-label">Profile</span>
+      </a>
+    </nav>
+
+    <button class="logout-btn" id="logoutBtn">
+      <span class="nav-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+          <polyline points="16 17 21 12 16 7"/>
+          <line x1="21" y1="12" x2="9" y2="12"/>
+        </svg>
+      </span>
+      <span class="nav-label">Log Out</span>
+    </button>
+  </aside>
+
+  <!-- ── MAIN AREA ── -->
+  <div class="main-wrap">
+
+    <!-- Top Bar -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <h1 class="page-title">Organizations & Clubs</h1>
+      </div>
+      <div class="topbar-right">
+        <button class="topbar-icon" title="Notifications">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+          </svg>
+        </button>
+        <button class="topbar-icon" title="Language">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </button>
+        <div class="topbar-user">
+          <span class="user-name"></span>
+          <span class="user-role">Student</span>
+        </div>
+        <div class="user-avatar"></div>
+      </div>
+    </header>
+
+    <!-- Sub-header: Tab Bar -->
+    <div class="notebooks-topbar">
+      <div class="nb-tab-bar">
+        <button class="nb-tab active" data-tab="joined">JOINED</button>
+        <button class="nb-tab" data-tab="available">AVAILABLE</button>
+      </div>
+    </div>
+
+    <!-- Page Content -->
+    <main class="content" style="padding-top: 12px;">
+
+      <p style="font-size:13px; color:var(--text-muted); margin-bottom:12px;">This is the list of your clubs and organizations</p>
+
+      <!-- Controls -->
+      <div class="nb-controls">
+        <select class="nb-select" id="yearFilter">
+          <option value="2025-2026">2025-2026</option>
+          <option value="2024-2025">2024-2025</option>
+          <option value="2023-2024">2023-2024</option>
+        </select>
+
+        <input type="text" class="nb-search" id="classSearch" placeholder="Search club or organization name" />
+
+        <select class="nb-sort" id="sortBy">
+          <option value="">Sort by</option>
+          <option value="name">Name (A–Z)</option>
+          <option value="teacher">Adviser</option>
+        </select>
+
+        <button class="nb-join-btn" id="joinClassBtn">Join Club</button>
+      </div>
+
+      <!-- Count -->
+      <div class="nb-count" id="classCount">9 clubs</div>
+
+      <!-- Class Grid -->
+      <div class="class-grid" id="classGrid"></div>
+
+    </main>
+
+    <footer class="page-footer" id="pageFooter">
+      <span class="footer-logo-mark">🐯</span>
+      Group 5 &ndash; 9 Emerald &copy;2026
+    </footer>
+
+  </div>
+
+  <!-- Join Class Modal -->
+  <div class="modal-overlay" id="joinModal">
+    <div class="modal">
+      <div class="modal-title">Join a Club</div>
+      <div class="modal-subtitle">Enter the club code provided by your adviser.</div>
+      <div class="modal-field">
+        <label>Club Code</label>
+        <input type="text" id="classCodeInput" placeholder="e.g. EH-DRAMA-25" />
+      </div>
+      <div class="modal-actions">
+        <button class="modal-cancel" id="joinCancel">Cancel</button>
+        <button class="modal-save" id="joinSave">Join</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="proj.js"></script>
+</body>
+</html>
